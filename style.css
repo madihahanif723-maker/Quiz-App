@@ -1,0 +1,166 @@
+body {
+    background-color: #f5e5e5;
+    margin: 0;
+    font-family: 'Segoe UI',Arial, sans-serif;
+}
+.navbar {
+    background: linear-gradient(135deg, #e20303, #3c08e5);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand,
+.nav-link {
+    color: #fff !important;
+    font-weight: 600;
+}
+
+.nav-link:hover {
+    color: #cfd8dc !important;
+    text-decoration: underline;
+}
+.login-form{
+    width: 400px;
+    height: 500px;
+    padding: 40px 30px;
+    background: linear-gradient(135deg, #bf0b0b, #050fc5);
+    background-color: #aa2426;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+#logincontainer{
+     text-align: center;
+     margin-top: 15px;
+}
+
+
+/* Inputs */
+input {
+    width: 100%;
+    padding: 14px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 12px;
+    outline: none;
+    font-size: 0.95rem;
+    box-sizing: border-box;
+    transition: box-shadow 0.3s ease;
+}
+input:focus {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+}
+input {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.login-form button {
+    width: 220px;
+    margin: 10px auto;
+    display: block;
+    padding: 12px 20px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #2505f1, #ed0808);
+    border: none;
+    color: #cfd8dc;
+}
+
+
+.signup-form button {
+    width: 320px;
+}
+
+.loginCont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-form:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.3);
+}
+
+.login-form button:hover{
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, #2505f1, #ed0808);
+    cursor: pointer;
+}
+.butcol{
+    background-color: #877979;
+     color: black;
+}
+
+.butcol:hover{
+    background-color: #877979;
+     color: black;
+     transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+.butcol:active{
+    background-color: #877979;
+     color: black;
+     transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+.butcol:disabled{
+    background-color: #877979;
+     color: black;
+     opacity: 0.6;
+     cursor: not-allowed;
+}
+.butncol{
+    background-color: green;
+     color: black;
+}
+.butncol:hover{
+    background-color: green;
+     color: black;
+     transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+.butncol:active{
+    background-color: green;
+     color: black;
+     transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+.butncol:disabled{
+    background-color: green;
+     color: black;
+     opacity: 0.6;
+     cursor: not-allowed;
+}
+.option-label{
+    border: 1px solid #f49797;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: block;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s
+        ease;
+
+}
+span {
+    font-size: 1.1rem;
+    color: #333;
+    font-weight: 500;
+}
+.three{
+    background: linear-gradient(135deg, #eb8a8a, #695bb1);
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    padding: 80px;
+}
+.three:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.3);
+}
