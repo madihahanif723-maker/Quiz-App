@@ -1,22 +1,20 @@
 body {
     background-color: #f5e5e5;
     margin: 0;
-    font-family: 'Segoe UI',Arial, sans-serif;
+    font-family: 'Segoe UI', Arial, sans-serif;
 }
+
+/* Navbar */
 .navbar {
     background: linear-gradient(135deg, #e20303, #3c08e5);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .navbar-brand,
 .nav-link {
     color: #fff !important;
-    font-weight: 600;
 }
-
 .nav-link:hover {
-    color: #cfd8dc !important;
-    text-decoration: underline;
+    color: #f49797 !important;
 }
 .login-form{
     width: 400px;
@@ -34,41 +32,27 @@ body {
      text-align: center;
      margin-top: 15px;
 }
-
-
-/* Inputs */
-input {
-    width: 100%;
-    padding: 14px;
-    margin: 10px 0;
-    border: none;
-    border-radius: 12px;
-    outline: none;
-    font-size: 0.95rem;
-    box-sizing: border-box;
-    transition: box-shadow 0.3s ease;
-}
-input:focus {
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
-}
-input {
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.login-form button {
-    width: 220px;
-    margin: 10px auto;
+form label {
     display: block;
-    padding: 12px 20px;
-    border-radius: 20px;
-    background: linear-gradient(135deg, #2505f1, #ed0808);
-    border: none;
-    color: #cfd8dc;
+    margin-bottom: 15px;
 }
-
-
-.signup-form button {
-    width: 320px;
+label input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: #f49797;
+    color: #333;
+    font-size: 1rem;
+}
+label input:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(244, 151, 151, 0.8);
+}
+.headlo {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    color: #fff;
 }
 
 .loginCont {
@@ -83,84 +67,105 @@ input {
     box-shadow: 0 25px 45px rgba(0, 0, 0, 0.3);
 }
 
+.login-form button {
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, #2505f1, #ed0808);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
 .login-form button:hover{
     transform: scale(1.1);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     background: linear-gradient(135deg, #2505f1, #ed0808);
     cursor: pointer;
 }
-.butcol{
-    background-color: #877979;
-     color: black;
+
+/* Quiz Card */
+#quizcontainer {
+    max-width: 700px;
+    margin: auto;
+    border-radius: 12px;
 }
 
-.butcol:hover{
-    background-color: #877979;
-     color: black;
-     transform: scale(1.1);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    cursor: pointer;
+/* Question */
+.question {
+    font-weight: 600;
+    margin-bottom: 20px;
 }
-.butcol:active{
-    background-color: #877979;
-     color: black;
-     transform: scale(1.1);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    cursor: pointer;
-}
-.butcol:disabled{
-    background-color: #877979;
-     color: black;
-     opacity: 0.6;
-     cursor: not-allowed;
-}
-.butncol{
-    background-color: green;
-     color: black;
-}
-.butncol:hover{
-    background-color: green;
-     color: black;
-     transform: scale(1.1);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    cursor: pointer;
-}
-.butncol:active{
-    background-color: green;
-     color: black;
-     transform: scale(1.1);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    cursor: pointer;
-}
-.butncol:disabled{
-    background-color: green;
-     color: black;
-     opacity: 0.6;
-     cursor: not-allowed;
-}
-.option-label{
+
+/* Options */
+.option-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     border: 1px solid #f49797;
     border-radius: 8px;
     padding: 10px;
     margin-bottom: 10px;
-    display: block;
     cursor: pointer;
-    transition: background-color 0.3s ease, box-shadow 0.3s
-        ease;
+}
 
+.option-label:hover {
+    background-color: #ffecec;
 }
+
+/* Radio Fix */
+input[type="radio"] {
+    width: auto;
+    margin: 0;
+}
+
+/* Text */
 span {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: #333;
-    font-weight: 500;
 }
-.three{
-    background: linear-gradient(135deg, #eb8a8a, #695bb1);
-    border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-    padding: 80px;
+
+/* Buttons */
+.btn-nav {
+    width: 120px;
 }
-.three:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.3);
+
+.butcol {
+    background-color: #877979;
+    color: white;
+}
+
+
+
+/* Button Hover */
+.butcol:hover {
+    background-color: #877979;
+    color: hsl(0, 0%, 100%);
+    transform: scale(1.05);
+    cursor: pointer;
+}
+.butcol:active {
+    background-color: #877979;
+    color: hsl(0, 0%, 100%);
+    transform: scale(0.95);
+}
+
+
+.butncol {
+    background-color: green;
+    color: white;
+}
+
+.butncol:hover {
+    background-color: green;
+    color: hsl(0, 0%, 100%);
+    transform: scale(1.05);
+    cursor: pointer;
+}
+.butncol:active {
+    background-color: green;
+    color: hsl(0, 0%, 100%);
+    transform: scale(0.95);
 }

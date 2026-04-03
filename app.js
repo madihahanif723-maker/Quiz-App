@@ -52,7 +52,7 @@ var QuizData = [{
     Option3: "String",
     Option4: "Character",
     Answer: "Character",
-},  {
+}, {
     question: "Q3:Which symbol is used for single-line comments in JavaScript?",
     Option1: "//",
     Option2: "##",
@@ -102,7 +102,7 @@ var QuizData = [{
     Option3: "Hello World!",
     Option4: "undefined",
     Answer: "Hello World!",
-},{
+}, {
     question: "Q10: Which function is used to serialize an object into a JSON string?",
     Option1: "JSON.parse()",
     Option2: "JSON.stringify()",
@@ -110,51 +110,78 @@ var QuizData = [{
     Option4: "JSON.convert()",
     Answer: "JSON.stringify()",
 }]
+
+
+
+
 var index = 0;
 var score = 0;
-function displayContainer() {
-    document.getElementById("displayCard").style.display = "block";
-    document.getElementById("displayCard").innerHTML = `<div  id="quizContainer">
-     <div class="quiz-card mb-4" id="displayArea">
-                    <h3 class="fw-bold mb-4">${QuizData[index].question}</h3>
-                    <div class="options-group">
-                        <label class="option-label">
-                            <input type="radio" name="option" class="form-check-input" value="${QuizData[index].Option1}">
-                            <span>${QuizData[index].Option1}</span>
-                        </label>
-                        <br>
-                        <label class="option-label">
-                            <input type="radio" name="option" class="form-check-input" value="${QuizData[index].Option2}">
-                            <span>${QuizData[index].Option2}</span>
-                        </label>
-                        <br>
-                        <label class="option-label">
-                            <input type="radio" name="option" class="form-check-input" value="${QuizData[index].Option3}">
-                            <span>${QuizData[index].Option3}</span>
-                        </label>
-                        <br>
-                        <label class="option-label">
-                            <input type="radio" name="option" class="form-check-input" value="${QuizData[index].Option4}">
-                            <span>${QuizData[index].Option4}</span>
-                        </label>
-                    </div>
-                </div>
 
-                <div class="d-flex justify-content-between">
-                    <button class="btn butcol btn-nav" onclick="previousQuiz()"> Previous</button>
-                    <button class="btn butncol btn-nav text-white" onclick="nextQuiz()">Next </button>
-                </div>
-            </div>`
-} displayContainer()
-function nextQuiz() {
-    if (index < QuizData.length - 1) {
-        index++
-        displayContainer()
+function displayContainer() {
+    var quizcontainer = document.getElementById("quizcontainer");
+
+    if (index >= QuizData.length) {
+        quizcontainer.innerHTML = `<h2>Your Score is ${score}/${QuizData.length}</h2>`;
+        return;
     }
+
+quizcontainer.innerHTML = `
+    <p class="question">${QuizData[index].question}</p>
+
+    <label class="option-label">
+        <input type="radio" name="option" value="${QuizData[index].Option1}">
+        <span>${QuizData[index].Option1}</span>
+    </label>
+
+    <label class="option-label">
+        <input type="radio" name="option" value="${QuizData[index].Option2}">
+        <span>${QuizData[index].Option2}</span>
+    </label>
+
+    <label class="option-label">
+        <input type="radio" name="option" value="${QuizData[index].Option3}">
+        <span>${QuizData[index].Option3}</span>
+    </label>
+
+    <label class="option-label">
+        <input type="radio" name="option" value="${QuizData[index].Option4}">
+        <span>${QuizData[index].Option4}</span>
+    </label>
+
+    <div class="d-flex justify-content-between mt-3">
+        <button class="btn butcol btn-nav" onclick="previousQuiz()">Previous</button>
+        <button id="nextBtn" class="btn butncol btn-nav" onclick="nextQuiz()">Next</button>
+    </div>
+`;
+if(index=== QuizData.length-1){
+        var nextBtn = document.getElementById("nextBtn")
+        nextBtn.innerHTML = "Submit"
+        nextBtn.classList.add("btn-success")
+        
+    }
+
 }
+
+function nextQuiz() {
+    var options = document.getElementsByName("option");
+
+    for (var i = 0; i < options.length; i++) {
+        if (options[i].checked) {
+            if (options[i].value === QuizData[index].Answer) {
+                score++;
+            }
+        }
+    }
+
+    index++;
+    displayContainer();
+}
+
 function previousQuiz() {
     if (index > 0) {
         index--;
-        displayContainer()
+        displayContainer();
     }
 }
+
+displayContainer();
