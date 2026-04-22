@@ -17,7 +17,7 @@ function login() {
             timer: 1500,
             showConfirmButton: false
         }).then(() => {
-            window.location.href = "quiz.html";
+            window.quizwindow= window.open("quiz.html", "quizwindow" ,"width= 700, height=600,left= 400") ;
         });
 
     } else {
@@ -192,7 +192,8 @@ function displayContainer() {
             }
         });
 
-        quizcontainer.innerHTML = `<h2>Your Score is ${score}/${QuizData.length}</h2>`;
+        quizcontainer.innerHTML = `<h2>Your Score is ${score}/${QuizData.length}</h2>`
+        window.quizwindow= window.close("quiz.html", "quizwindow" ,"width= 700, height=600,left= 400") ;
         return;
     }
 
